@@ -261,7 +261,7 @@ elif a==3:
 if lap=="yes" or lap=="Yes" or a==4:
     totalmoney=1000
     bottotalmoney=1000
-    while totalmoney>0:
+    while totalmoney>0 and bottotalmoney>0:
         idk=input("Do you want to play? ")
         if idk=="no" or idk=="No":
             lap="no"
@@ -272,7 +272,7 @@ if lap=="yes" or lap=="Yes" or a==4:
             number=[1,2,3,4,5,6,7,8,9,10]
             numbers=random.choice(number)
             trys=1
-            if totalmoney>=money:
+            if totalmoney>=money and bottotalmoney>=money:
                 while trys<=3:
                     y=int(input("guess a number from one to 10 "))
                     if y==numbers:
@@ -291,37 +291,36 @@ if lap=="yes" or lap=="Yes" or a==4:
                         print("GAME OVER")
                         totalmoney=totalmoney-money
                         bottotalmoney=bottotalmoney+money
-                        break
 
-            elif totalmoney<money:
-                print("you dont have enouguh money to do that")
-            elif bottotalmoney<money:
-                print("Sorry i dont have enoguh money to do that")
-            elif bottotalmoney==0:
-                a=input("im all out of money wanna play a diffrent game? ")
-                lap="no"
-            elif totalmoney==0:
-                wanna=input("your out of money wanna do somthing else? ")
-                if wanna=="yes" or a==5 or wanna=="Yes":
-                    print("cool lets try my fidget spinner(click down arrow key to spin)")
-                    a=5 
+                    elif totalmoney<money:
+                        print("you dont have enouguh money to do that")
+                    elif bottotalmoney<money:
+                        print("Sorry i dont have enoguh money to do that")
+                    elif bottotalmoney==0:
+                        a=input("im all out of money wanna play a diffrent game? ")
+                        lap="no"
+                    elif totalmoney==0:
+                        wanna=input("your out of money wanna do somthing else? ")
+                        if wanna=="yes" or a==5 or wanna=="Yes":
+                            print("cool lets try my fidget spinner(click down arrow key to spin)")
+                            a=5 
 
 
-                else:
-                    b=input("Okay do you want to play snake game instead? ")
-                    if b=="yes" or b=="Yes":
-                        a=2
-                    else:
-                        c=input("Ok do you want to play a game of dice, Ill win on even you win on odd ")
-                        if c=="yes" or c== "Yes":
-                            a=3
                         else:
-                            b=input("Thats fine do you want to play highlow instead? ")
-                            if b=="yes" or b== "Yes":
-                                a=4
+                            b=input("Okay do you want to play snake game instead? ")
+                            if b=="yes" or b=="Yes":
+                                a=2
                             else:
-                                print("Sorry I dont have anything else to play with, see me when you want to play with me again, bye for now ")
-                                exit.sys("see you later" )
+                                c=input("Ok do you want to play a game of dice, Ill win on even you win on odd ")
+                                if c=="yes" or c== "Yes":
+                                    a=3
+                                else:
+                                    b=input("Thats fine do you want to play highlow instead? ")
+                                    if b=="yes" or b== "Yes":
+                                        a=4
+                                    else:
+                                        print("Sorry I dont have anything else to play with, see me when you want to play with me again, bye for now ")
+                                        exit.sys("see you later" )
                             
 
         elif lap=="no" or x== "No":
@@ -339,5 +338,6 @@ if lap=="yes" or lap=="Yes" or a==4:
                     else:
                         print("Sorry I dont have anything else to play with, see me when you want to play with me again, bye for now ")
                         exit.sys("see you later" )
+
 
 
